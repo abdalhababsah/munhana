@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
+
+<head>
+    <meta charset="utf-8">
+    <title>AI Chat | TailFox - Responsive Tailwind Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="MyraStudio" name="author">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/theme.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/libs/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
+
+    <!-- Head Js -->
+    <script src="assets/js/head.js"></script>
+</head>
+
+<body>
+
+    <div class="app-wrapper">
+
+        <!-- Sidebar Menu Start -->
+        <div class="app-menu">
+
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo-box">
+                <img src="assets/images/logo-light.png" class="logo-light h-6" alt="Light logo">
+                <img src="assets/images/logo-dark.png" class="logo-dark h-6" alt="Dark logo">
+            </a>
+
+            <!--- Menu -->
+            <div data-simplebar>
+                <ul class="menu">
+                    <li class="menu-title">Menu</li>
+
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-estate"></i></span>
+                            <span class="menu-text"> Dashboard </span>
+                            <span class="badge bg-primary rounded ms-auto">01</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="chat.html" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-hipchat"></i></span>
+                            <span class="menu-text"> AI Chat </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-title">Custom</li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-hs-collapse="#sidenavExtraPages" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-file-plus"></i></span>
+                            <span class="menu-text"> Extra Pages </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul id="sidenavExtraPages" class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="pages-starter.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Starter</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="pages-invoice.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Invoice</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="pages-maintenance.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Maintenance</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-hs-collapse="#sidenavAuthPages" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-sign-in-alt"></i></span>
+                            <span class="menu-text"> Auth Pages </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul id="sidenavAuthPages" class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="auth-login.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Log In</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="auth-register.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Register</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="auth-recoverpw.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Recover Password</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="auth-lock-screen.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Lock Screen</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-hs-collapse="#sidenavErrorPages" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-sync-exclamation"></i></span>
+                            <span class="menu-text"> Error Pages </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul id="sidenavErrorPages" class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="pages-404.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Error 404</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="pages-500.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Error 500</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-title">Elements</li>
+
+                    <li class="menu-item">
+                        <a href="ui-components.html" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-apps"></i></span>
+                            <span class="menu-text"> Components </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-hs-collapse="#sidenavForms" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-file-alt"></i></span>
+                            <span class="menu-text"> Forms </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul id="sidenavForms" class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="forms-elements.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Form Elements</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="forms-masks.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Masks</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="forms-editor.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Editor</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="forms-validation.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Validation</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="forms-layout.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Form Layout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>            
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-hs-collapse="#sidenavMaps" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-map-marker"></i></span>
+                            <span class="menu-text"> Maps </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul id="sidenavMaps" class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="maps-vector.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Vector Maps</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="maps-google.html" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Google Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="tables-basic.html" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-th"></i></span>
+                            <span class="menu-text"> Tables </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="charts-apex.html" class="menu-link">
+                            <span class="menu-icon"><i class="uil uil-chart"></i></i></span>
+                            <span class="menu-text"> Chart </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-hs-collapse="#sidenavLevel" class="menu-link">
+                            <span class="menu-icon">
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                            <span class="menu-text"> Level </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul id="sidenavLevel" class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="javascript: void(0)" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Item 1</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="javascript: void(0)" class="menu-link">
+                                    <span class="menu-dot"></span>
+                                    <span class="menu-text">Item 2</span>
+                                    <span class="badge bg-info rounded ms-auto">New</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" class="menu-link">
+                            <span class="menu-icon">
+                                <i class="uil uil-arrow-circle-right"></i>
+                            </span>
+                            <span class="menu-text"> Badge Items </span>
+                            <span class="badge bg-danger rounded ms-auto">Hot</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Sidebar Menu End  -->
+
+        <!-- Start Page Content here -->
+        <div class="app-content">
+
+            <!-- Topbar Start -->
+            <header class="app-header flex items-center px-5 gap-4">
+
+                <!-- Brand Logo -->
+                <a href="index.html" class="logo-box">
+                    <img src="assets/images/logo-sm.png" class="h-6" alt="Small logo">
+                </a>
+
+                <!-- Sidenav Menu Toggle Button -->
+                <button id="button-toggle-menu" class="nav-link p-2">
+                    <span class="sr-only">Menu Toggle Button</span>
+                    <span class="flex items-center justify-center h-6 w-6">
+                        <i class="uil uil-bars text-2xl"></i>
+                    </span>
+                </button>
+
+                <!-- Page Title -->
+                <h4 class="text-slate-900 text-lg font-medium">AI Chat</h4>
+
+                <button id="button-toggle-profile" class="nav-link p-2 ms-auto">
+                    <span class="sr-only">Profile Menu Offcanvas Button</span>
+                    <span class="flex items-center justify-center h-6 w-6">
+                        <i class="uil uil-heart-rate text-2xl"></i>
+                    </span>
+                </button>
+            </header>
+            <!-- Topbar End -->
+
+            <main>
+                <!-- Content -->
+                <div class="relative">
+                    <div class="py-14 h-[calc(100vh-252px)] scroll-container" data-simplebar>
+
+                        <div class="content">
+                            <!-- Title -->
+                            <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
+                                <a href="#" class="flex justify-center mb-6">
+                                    <img src="assets/images/logo-dark.png" class="h-6" alt="logo">
+                                </a>
+
+                                <h1 class="text-3xl font-bold text-gray-800 sm:text-4xl">
+                                    Welcome to TailFox AI
+                                </h1>
+                                <p class="mt-3 text-gray-600">
+                                    Your AI-powered copilot for the web
+                                </p>
+                            </div>
+                            <!-- End Title -->
+
+                            <ul class="mt-16 space-y-5">
+                                <!-- Chat Bubble -->
+                                <li class="max-w-4xl py-2 px-4 sm:px-6 lg:px-8 mx-auto flex gap-x-2 sm:gap-x-4">
+                                    <img src="assets/images/logo-sm.png" alt="logo" class="h-9 w-9">
+
+                                    <div class="space-y-3">
+                                        <h2 class="font-medium text-gray-800">
+                                            How can we help?
+                                        </h2>
+                                        <div class="space-y-1.5">
+                                            <p class="mb-1.5 text-sm text-gray-800">
+                                                You can ask questions like:
+                                            </p>
+                                            <ul class="list-disc list-outside space-y-1.5 pl-3.5">
+                                                <li class="text-sm text-gray-800">
+                                                    What's TailFox UI?
+                                                </li>
+
+                                                <li class="text-sm text-gray-800">
+                                                    How many Starter Pages & Examples are there?
+                                                </li>
+
+                                                <li class="text-sm text-gray-800">
+                                                    Is there a PRO version?
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="py-2 sm:py-4">
+                                    <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+                                        <div class="max-w-2xl flex gap-x-2 sm:gap-x-4">
+                                            <span
+                                                class="flex-shrink-0 inline-flex items-center justify-center h-[2.375rem] w-[2.375rem] rounded-full bg-gray-600">
+                                                <span class="text-sm font-medium text-white leading-none">TW</span>
+                                            </span>
+
+                                            <div class="grow mt-2 space-y-3">
+                                                <p class="text-gray-800">
+                                                    what's TailFox ui?
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="max-w-4xl py-2 px-4 sm:px-6 lg:px-8 mx-auto flex gap-x-2 sm:gap-x-4">
+                                    <img src="assets/images/logo-sm.png" alt="logo" class="h-9 w-9">
+
+                                    <div class="grow max-w-[90%] md:max-w-2xl w-full space-y-3">
+                                        <!-- Card -->
+                                        <div class="space-y-3">
+                                            <p class="text-sm text-gray-800">
+                                                TailFox UI is an open-source set of prebuilt UI components based on the
+                                                utility-first Tailwind CSS framework.
+                                            </p>
+                                            <div class="space-y-1.5">
+                                                <p class="text-sm text-gray-800">
+                                                    Here're some links to get started
+                                                </p>
+                                                <ul>
+                                                    <li>
+                                                        <a class="text-sm text-blue-600 decoration-2 hover:underline font-medium"
+                                                            href="../docs/index.html">
+                                                            Installation Guide
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="text-sm text-blue-600 decoration-2 hover:underline font-medium"
+                                                            href="../docs/frameworks.html">
+                                                            Framework Guides
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- End Card -->
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="py-2 sm:py-4">
+                                    <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+                                        <div class="max-w-2xl flex gap-x-2 sm:gap-x-4">
+                                            <span
+                                                class="flex-shrink-0 inline-flex items-center justify-center h-[2.375rem] w-[2.375rem] rounded-full bg-gray-600">
+                                                <span class="text-sm font-medium text-white leading-none">TW</span>
+                                            </span>
+
+                                            <div class="grow mt-2 space-y-3">
+                                                <p class="text-gray-800">
+                                                    what's TailFox ui figma?
+                                                </p>
+                                                <div class="mt-3">
+                                                    <button type="button"
+                                                        class="p-2 inline-flex justify-center items-center gap-x-1 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-xs">
+                                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                            width="16" height="16" fill="currentColor"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                                        </svg>
+                                                        Voice message
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="max-w-4xl py-2 px-4 sm:px-6 lg:px-8 mx-auto flex gap-x-2 sm:gap-x-4">
+                                    <img src="assets/images/logo-sm.png" alt="logo" class="h-9 w-9">
+
+                                    <div class="grow max-w-[90%] md:max-w-2xl w-full space-y-3">
+                                        <!-- Card -->
+                                        <div class="space-y-3">
+                                            <p class="text-sm text-gray-800">
+                                                TailFox UI Figma is the largest free design system for Figma, crafted
+                                                with Tailwind CSS styles and TailFox UI components with extra top-notch
+                                                additions.
+                                            </p>
+                                            <div class="space-y-1.5">
+                                                <p class="text-sm text-gray-800">
+                                                    With the features like:
+                                                </p>
+                                                <ul class="list-disc list-outside space-y-1.5 pl-3.5">
+                                                    <li class="text-sm text-gray-800">
+                                                        12-column Grid System
+                                                    </li>
+
+                                                    <li class="text-sm text-gray-800">
+                                                        Easily find UI elements
+                                                    </li>
+
+                                                    <li class="text-sm text-gray-800">
+                                                        Variants and Properties
+                                                    </li>
+
+                                                    <li class="text-sm text-gray-800">
+                                                        Tailwind CSS Color styles
+                                                    </li>
+
+                                                    <li class="text-sm text-gray-800">
+                                                        Auto layout and constraints
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- End Card -->
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="py-2 sm:py-4">
+                                    <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+                                        <div class="max-w-2xl flex gap-x-2 sm:gap-x-4">
+                                            <span
+                                                class="flex-shrink-0 inline-flex items-center justify-center h-[2.375rem] w-[2.375rem] rounded-full bg-gray-600">
+                                                <span class="text-sm font-medium text-white leading-none">TW</span>
+                                            </span>
+
+                                            <div class="grow mt-2 space-y-3">
+                                                <p class="text-gray-800">
+                                                    create a table example with TailFox using avatars, badges and
+                                                    progress bars
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="max-w-4xl py-2 px-4 sm:px-6 lg:px-8 mx-auto flex gap-x-2 sm:gap-x-4">
+                                    <img src="assets/images/logo-sm.png" alt="logo" class="h-9 w-9">
+
+                                    <div class="grow max-w-[90%] md:max-w-2xl w-full space-y-3">
+                                        <!-- Card -->
+                                        <div class="space-y-3">
+                                            <p class="text-sm text-gray-800">
+                                                Sure!
+                                            </p>
+                                        </div>
+                                        <!-- End Card -->
+
+                                        <div>
+                                            <button type="button"
+                                                class="mb-2.5 mr-1.5 py-2 px-3 inline-flex justify-center items-center gap-x-2 rounded-md border border-blue-600 bg-white text-blue-600 align-middle hover:bg-blue-50 text-sm">
+                                                Is Tailwind CSS a free library?
+                                            </button>
+                                            <button type="button"
+                                                class="mb-2.5 mr-1.5 py-2 px-3 inline-flex justify-center items-center gap-x-2 rounded-md border border-blue-600 bg-white text-blue-600 align-middle hover:bg-blue-50 text-sm">
+                                                What's the latest Tailwind CSS version?
+                                            </button>
+                                            <button type="button"
+                                                class="mb-2.5 mr-1.5 py-2 px-3 inline-flex justify-center items-center gap-x-2 rounded-md border border-blue-600 bg-white text-blue-600 align-middle hover:bg-blue-50 text-sm">
+                                                Is it a utility-class based?
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="py-2 sm:py-4">
+                                    <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+                                        <div class="max-w-2xl flex gap-x-2 sm:gap-x-4">
+                                            <span
+                                                class="flex-shrink-0 inline-flex items-center justify-center h-[2.375rem] w-[2.375rem] rounded-full bg-gray-600">
+                                                <span class="text-sm font-medium text-white leading-none">TW</span>
+                                            </span>
+
+                                            <div class="grow mt-2 space-y-3">
+                                                <p class="text-gray-800">
+                                                    generate 3-dimensional abstract images
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="max-w-4xl py-2 px-4 sm:px-6 lg:px-8 mx-auto flex gap-x-2 sm:gap-x-4">
+                                    <img src="assets/images/logo-sm.png" alt="logo" class="h-9 w-9">
+
+                                    <div class="grow max-w-[90%] md:max-w-2xl w-full space-y-3">
+                                        <!-- Card -->
+                                        <div class="space-y-3">
+                                            <p class="text-sm text-gray-800">
+                                                Here you go...
+                                            </p>
+                                        </div>
+                                        <!-- End Card -->
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="py-2 sm:py-4">
+                                    <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+                                        <div class="max-w-2xl flex gap-x-2 sm:gap-x-4">
+                                            <span
+                                                class="flex-shrink-0 inline-flex items-center justify-center h-[2.375rem] w-[2.375rem] rounded-full bg-gray-600">
+                                                <span class="text-sm font-medium text-white leading-none">TW</span>
+                                            </span>
+
+                                            <div class="grow mt-2 space-y-3">
+                                                <p class="text-gray-800">
+                                                    what's tailwindcss?
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="max-w-4xl py-2 px-4 sm:px-6 lg:px-8 mx-auto flex gap-x-2 sm:gap-x-4">
+                                    <img src="assets/images/logo-sm.png" alt="logo" class="h-9 w-9">
+
+                                    <div class="grow max-w-[90%] md:max-w-2xl w-full space-y-3">
+                                        <!-- Card -->
+                                        <div class="space-y-3">
+                                            <p class="text-sm text-gray-800">
+                                                Tailwind CSS is an open source CSS framework. The main feature of this
+                                                library is that, unlike other CSS frameworks like Bootstrap, it does not
+                                                provide a series of predefined classes for elements such as buttons or
+                                                tables.
+                                            </p>
+                                            <div class="space-y-1.5">
+                                                <ul>
+                                                    <li>
+                                                        <a class="text-sm text-blue-600 decoration-2 hover:underline font-medium"
+                                                            href="#">
+                                                            Get started with Tailwind CSS
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="text-sm text-blue-600 decoration-2 hover:underline font-medium"
+                                                            href="#">
+                                                            Tailwind CSS Installation guide
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- End Card -->
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="py-2 sm:py-4">
+                                    <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+                                        <div class="max-w-2xl flex gap-x-2 sm:gap-x-4">
+                                            <div>
+                                                <div class="text-end">
+                                                    <button type="button"
+                                                        class="ml-1.5 py-2 px-3 inline-flex justify-center items-center gap-x-2 rounded-md border border-blue-600 bg-white text-blue-600 align-middle hover:bg-blue-50 text-sm">
+                                                        What is the use of Tailwind CSS?
+                                                    </button>
+                                                    <button type="button"
+                                                        class="ml-1.5 py-2 px-3 inline-flex justify-center items-center gap-x-2 rounded-md border border-blue-600 bg-white text-blue-600 align-middle hover:bg-blue-50 text-sm">
+                                                        What is the difference between Tailwind CSS and CSS?
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+
+                                <!-- Chat Bubble -->
+                                <li class="py-2 sm:py-4">
+                                    <div class="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+                                        <div class="max-w-2xl flex gap-x-2 sm:gap-x-4">
+                                            <span
+                                                class="flex-shrink-0 inline-flex items-center justify-center h-[2.375rem] w-[2.375rem] rounded-full bg-gray-600">
+                                                <span class="text-sm font-medium text-white leading-none">TW</span>
+                                            </span>
+
+                                            <div class="grow mt-2 space-y-3">
+                                                <p class="text-gray-800">
+                                                    2 files uploaded
+                                                </p>
+
+                                                <ul class="flex flex-col justify-end text-start -space-y-px">
+                                                    <li
+                                                        class="flex items-center gap-x-2 p-3 text-sm bg-white border text-gray-800 first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+                                                        <div class="w-full flex justify-between truncate">
+                                                            <span class="mr-3 flex-1 w-0 truncate">
+                                                                resume_web_ui_developer.csv
+                                                            </span>
+                                                            <a class="flex items-center gap-x-2 text-gray-500 hover:text-blue-500 whitespace-nowrap"
+                                                                href="javascript:;">
+                                                                <svg class="flex-shrink-0 w-3 h-3" width="16"
+                                                                    height="16" viewBox="0 0 16 16" fill="currentColor">
+                                                                    <path
+                                                                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                                                    <path
+                                                                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                                                                </svg>
+                                                                Download
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li
+                                                        class="flex items-center gap-x-2 p-3 text-sm bg-white border text-gray-800 first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+                                                        <div class="w-full flex justify-between truncate">
+                                                            <span class="mr-3 flex-1 w-0 truncate">
+                                                                coverletter_web_ui_developer.pdf
+                                                            </span>
+                                                            <a class="flex items-center gap-x-2 text-gray-500 hover:text-blue-500 whitespace-nowrap"
+                                                                href="javascript:;">
+                                                                <svg class="flex-shrink-0 w-3 h-3" width="16"
+                                                                    height="16" viewBox="0 0 16 16" fill="currentColor">
+                                                                    <path
+                                                                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                                                    <path
+                                                                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                                                                </svg>
+                                                                Download
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- End Chat Bubble -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="sticky bottom-0 z-10 bg-white border-t border-gray-200 p-4">
+                        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="flex justify-between items-center mb-3">
+                                <button type="button"
+                                    class="inline-flex justify-center items-center gap-x-2 rounded-md font-medium text-gray-800 hover:text-blue-600 text-xs sm:text-sm">
+                                    <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8 2C8.47339 2 8.85714 2.38376 8.85714 2.85714V7.14286L13.1429 7.14286C13.6162 7.14286 14 7.52661 14 8C14 8.47339 13.6162 8.85714 13.1429 8.85714L8.85714 8.85715V13.1429C8.85714 13.6162 8.47339 14 8 14C7.52661 14 7.14286 13.6162 7.14286 13.1429V8.85715L2.85714 8.85715C2.38376 8.85715 2 8.4734 2 8.00001C2 7.52662 2.38376 7.14287 2.85714 7.14287L7.14286 7.14286V2.85714C7.14286 2.38376 7.52661 2 8 2Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    New chat
+                                </button>
+
+                                <button type="button"
+                                    class="py-1.5 px-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-xs">
+                                    <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z" />
+                                    </svg>
+                                    Stop generating
+                                </button>
+                            </div>
+
+                            <!-- Input -->
+                            <div class="relative">
+                                <textarea
+                                    class="p-4 pb-12 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500"
+                                    placeholder="Ask me anything..."></textarea>
+
+                                <!-- Toolbar -->
+                                <div class="absolute bottom-px inset-x-px p-2 rounded-b-md bg-white">
+                                    <div class="flex justify-between items-center">
+                                        <!-- Button Group -->
+                                        <div class="flex items-center">
+                                            <!-- Mic Button -->
+                                            <button type="button"
+                                                class="inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                                               <i class="uil uil-edit text-lg"></i>
+                                            </button>
+                                            <!-- End Mic Button -->
+
+                                            <!-- Attach Button -->
+                                            <button type="button"
+                                                class="inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                                                <i class="uil uil-paperclip text-lg"></i>
+                                            </button>
+                                            <!-- End Attach Button -->
+                                        </div>
+                                        <!-- End Button Group -->
+
+                                        <!-- Button Group -->
+                                        <div class="flex items-center gap-x-1">
+                                            <!-- Mic Button -->
+                                            <button type="button"
+                                                class="inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                                                <i class="uil uil-microphone text-lg"></i>
+                                            </button>
+                                            <!-- End Mic Button -->
+
+                                            <!-- Send Button -->
+                                            <button type="button"
+                                                class="inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                                                <i class="uil uil-message text-lg"></i>
+                                            </button>
+                                            <!-- End Send Button -->
+                                        </div>
+                                        <!-- End Button Group -->
+                                    </div>
+                                </div>
+                                <!-- End Toolbar -->
+                            </div>
+                            <!-- End Input -->
+                        </div>
+                    </div>
+                    <!-- End Search -->
+                </div>
+                <!-- End Content -->
+            </main>
+
+
+        </div>
+        <!-- End Page content -->
+
+        <div class="profile-menu">
+            <div class="flex flex-col items-center h-full gap-4 py-10 px-3">
+                <!-- Profile Link -->
+                <a href="#" type="button" class="flex flex-col items-center gap-1">
+                    <img src="assets/images/users/avatar-6.jpg" alt="user-image" class="rounded-full h-8 w-8">
+                    <span class="font-medium text-base">Jamie D.</span>
+                    <span class="text-sm">Admin</span>
+                </a>
+
+                <!-- Search Modal Button -->
+                <button type="button" data-hs-overlay="#search-modal" class="bg-white rounded-full shadow-md p-2">
+                    <span class="sr-only">Search</span>
+                    <span class="flex items-center justify-center h-6 w-6">
+                        <i class="uil uil-search text-2xl"></i>
+                    </span>
+                </button>
+
+                <!-- Fullscreen Toggle Button -->
+                <div class="flex">
+                    <button data-toggle="fullscreen" type="button" class="bg-white rounded-full shadow-md p-2">
+                        <span class="sr-only">Fullscreen Mode</span>
+                        <span class="flex items-center justify-center h-6 w-6">
+                            <i class="uil uil-focus text-2xl"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="search-modal"
+            class="hs-overlay hidden w-full h-full fixed top-0 start-0 z-[60] overflow-x-hidden overflow-y-auto pointer-events-none">
+            <div
+                class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+                <div
+                    class="flex flex-col bg-white shadow-sm rounded-xl pointer-events-auto overflow-hidden">
+                    <div class="relative z-[60]">
+                        <input type="search" id="search-input" class="form-input ps-10">
+                        <span class="absolute start-3 top-1.5">
+                            <i class="uil uil-search text-lg"></i>
+                        </span>
+    
+                        <span class="absolute end-3 top-1.5">
+                            <button data-hs-overlay="#search-modal">
+                                <i class="uil uil-times text-lg"></i>
+                            </button>
+                        </span>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Plugin Js -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/preline/preline.js"></script>
+
+    <!-- App Js -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
