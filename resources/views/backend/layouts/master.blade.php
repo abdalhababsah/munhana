@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
 
 <head>
     <meta charset="utf-8">
@@ -21,6 +21,9 @@
 
     <!-- Head Js -->
     <script src="{{ asset('dash/assets/js/head.js') }}"></script>
+
+    <!-- Alpine.js for interactive components -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
@@ -35,6 +38,7 @@
             @include('backend.partials.header')
 
             <main class="p-6">
+                @include('backend.partials.alerts')
                 @yield('content')
             </main>
 

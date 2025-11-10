@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Project extends Model
@@ -151,5 +152,30 @@ class Project extends Model
     public function maintenanceSchedules(): HasMany
     {
         return $this->hasMany(MaintenanceSchedule::class);
+    }
+
+    /**
+     * Get the workers assigned to this project.
+     */
+    public function assignedWorkers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'project_user')
+            ->wherePivot('user_id', function ($query) {
+                $query->whereHas('user', function ($q) {
+                    $q->where('role', 'worker');
+                });
+            })
+            ->withPivot('assigned_by', 'assigned_at', 'role_description', 'role_description_ar')
+            ->withTimestamps();
+    }
+
+    /**
+     * Get all users assigned to this project (any role).
+     */
+    public function assignedUsers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'project_user')
+            ->withPivot('assigned_by', 'assigned_at', 'role_description', 'role_description_ar')
+            ->withTimestamps();
     }
 }

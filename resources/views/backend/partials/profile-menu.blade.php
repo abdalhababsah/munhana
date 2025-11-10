@@ -1,10 +1,14 @@
+@php
+    $profileUser = Auth::user();
+    $roleLabel = $profileUser?->role ? __('messages.' . $profileUser->role) : __('messages.user');
+@endphp
 <div class="profile-menu">
     <div class="flex flex-col items-center h-full gap-4 py-10 px-3">
         <!-- Profile Link -->
         <a href="{{ route('profile.edit') }}" type="button" class="flex flex-col items-center gap-1">
             <img src="{{ asset('dash/assets/images/users/avatar-6.jpg') }}" alt="user-image" class="rounded-full h-8 w-8">
-            <span class="font-medium text-base">{{ Auth::user()->name ?? 'User' }}</span>
-            <span class="text-sm">Admin</span>
+            <span class="font-medium text-base">{{ $profileUser->name ?? __('messages.user') }}</span>
+            <span class="text-sm">{{ $roleLabel }}</span>
         </a>
 
         <!-- Search Modal Button -->

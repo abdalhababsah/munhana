@@ -24,7 +24,9 @@
                 </div>
 
                 <div class="flex justify-center mb-3">
-                    <button type="submit" class="btn w-full text-white bg-primary"> Confirm </button>
+                    <button
+                    style="background: #e6dac0; color: #2f2f2f;"
+                    type="submit" class="btn w-full"> Confirm </button>
                 </div>
             </form>
         </div>

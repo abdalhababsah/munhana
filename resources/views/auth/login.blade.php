@@ -32,7 +32,7 @@
                     <div class="flex items-center justify-between mb-2">
                         <label for="password">Password</label>
                         @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}" class="text-sm text-primary">Forget Password ?</a>
+                            <a href="{{ route('password.request') }}" class="text-sm text-[#2f2f2f]">Forget Password ?</a>
                         @endif
                     </div>
                     <input id="password" class="form-input @error('password') border-danger @enderror" type="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
@@ -47,7 +47,9 @@
                 </div>
 
                 <div class="flex justify-center mb-3">
-                    <button type="submit" class="btn w-full text-white bg-primary"> Sign In </button>
+                    <button 
+                    style="background: #e6dac0; color: #2f2f2f;"
+                    type="submit" class="btn w-full "> Sign In </button>
                 </div>
             </form>
         </div>

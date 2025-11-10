@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
@@ -120,5 +121,15 @@ class User extends Authenticatable
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * Get the projects where this user is assigned as a worker.
+     */
+    public function assignedProjects(): BelongsToMany
+    {
+        return $this->belongsToMany(Project::class, 'project_user')
+            ->withPivot('assigned_by', 'assigned_at', 'role_description', 'role_description_ar')
+            ->withTimestamps();
     }
 }

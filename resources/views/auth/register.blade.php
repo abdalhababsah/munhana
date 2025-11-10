@@ -51,7 +51,9 @@
                 </div>
 
                 <div class="flex justify-center mb-3">
-                    <button type="submit" class="btn w-full text-white bg-primary"> Sign Up Free </button>
+                    <button type="submit" class="btn w-full"
+                    style="background: #e6dac0; color: #2f2f2f;"
+                    > Sign Up Free </button>
                 </div>
             </form>
         </div>

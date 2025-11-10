@@ -1,9 +1,17 @@
 <!-- Topbar Start -->
+@php
+    $authUser = auth()->user();
+    $dashboardRoute = match ($authUser?->role) {
+        'client' => 'client.dashboard',
+        'worker' => 'dashboard',
+        default => 'backend.dashboard',
+    };
+@endphp
 <header class="app-header flex items-center px-5 gap-4">
 
     <!-- Brand Logo -->
-    <a href="{{ route('backend.dashboard') }}" class="logo-box">
-        <img src="{{ asset('dash/assets/images/logo-sm.png') }}" class="h-6" alt="Small logo">
+    <a href="{{ route($dashboardRoute) }}" class="logo-box">
+        <img src="{{ asset('dash/assets/images/logo-sm.png') }}" class="h-8" alt="Small logo">
     </a>
 
     <!-- Sidenav Menu Toggle Button -->
@@ -15,7 +23,10 @@
     </button>
 
     <!-- Page Title -->
-    <h4 class="text-slate-900 text-lg font-medium">@yield('page-title', 'Dashboard')</h4>
+    <h4 class="text-slate-900 text-lg font-medium">@yield('page-title', __('messages.dashboard'))</h4>
+
+    <!-- Language Switcher -->
+    @include('backend.partials.language-switcher')
 
     <button id="button-toggle-profile" class="nav-link p-2 ms-auto">
         <span class="sr-only">Profile Menu Offcanvas Button</span>

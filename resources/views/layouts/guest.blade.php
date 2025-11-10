@@ -20,7 +20,7 @@
     <script src="{{ asset('dash/assets/js/head.js') }}"></script>
 </head>
 
-<body class="bg-primary h-screen w-screen flex justify-center items-center">
+<body class=" h-screen w-screen flex justify-center items-center">
     @yield('content')
 </body>
 
