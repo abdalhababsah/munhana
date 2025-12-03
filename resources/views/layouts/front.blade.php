@@ -6,9 +6,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- 1. Primary Meta Tags --}}
-    <title>@yield('title', config('app.name', 'Munhana')) | {{ __('messages.app_tagline') }}</title>
+    {{-- تم تحديث اسم التطبيق الافتراضي إلى "منحنى" --}}
+    <title>@yield('title', config('app.name', 'منحنى')) | {{ __('messages.app_tagline') }}</title>
     <meta name="description" content="@yield('meta_description', __('messages.meta_description', ['app_name' => config('app.name')]))">
-    <meta name="keywords" content="infrastructure, construction tracker, project management, turnkey solutions, interior design, fitout, architecture, engineering, building app">
+    
+    {{-- الكلمات المفتاحية (Keywords) باللغة العربية --}}
+    <meta name="keywords" content="البنية التحتية، تتبع الإنشاءات، إدارة المشاريع، حلول تسليم المفتاح، التصميم الداخلي، التجهيزات، العمارة، الهندسة، تطبيق البناء، منحنى">
+    
     <meta name="author" content="{{ config('app.name') }}">
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -20,6 +24,8 @@
     <meta property="og:image" content="{{ asset('dash/assets/images/logo-light.png') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    
+    {{-- تم تحديد الموقع الجغرافي (Locale) لـ ar_SA --}}
     <meta property="og:locale" content="{{ app()->getLocale() === 'ar' ? 'ar_SA' : 'en_US' }}">
     <meta property="og:site_name" content="{{ config('app.name') }}">
 
@@ -54,6 +60,7 @@
                 <div class="flex items-center gap-3">
                     <img src="{{ asset('dash/assets/images/logo-light.png') }}" alt="{{ config('app.name') }} logo" class="h-10">
                 </div>
+                {{-- تم استخدام الترجمة لمحتوى "عنّا" --}}
                 <p class="text-sm" style="color:rgba(255,255,255,0.8);">
                     {{ __('messages.footer_about') }}
                 </p>
@@ -81,7 +88,7 @@
                 </div>
             </div>
     
-            {{-- Column 2: Quick Links --}}
+            {{-- Column 2: Quick Links (روابط سريعة) --}}
             <div>
                 <h4 class="text-sm font-semibold mb-4 tracking-wide uppercase"
                     style="color:#e6dac0;">
@@ -136,11 +143,11 @@
                 </ul>
             </div>
     
-            {{-- Column 3: Services Summary --}}
+            {{-- Column 3: Services Summary (ملخص الخدمات) --}}
             <div>
                 <h4 class="text-sm font-semibold mb-4 tracking-wide uppercase"
                     style="color:#e6dac0;">
-                    {{ __('messages.services') ?? 'Services' }}
+                    {{ __('messages.services') ?? 'الخدمات' }}
                 </h4>
                 <ul class="space-y-2 text-sm" style="color:rgba(255,255,255,0.8);">
                     <li>• {{ __('messages.service_arch_title') }}</li>
@@ -153,7 +160,7 @@
                 </p>
             </div>
     
-            {{-- Column 4: Contact & Address --}}
+            {{-- Column 4: Contact & Address (التواصل والعنوان) --}}
             <div class="space-y-4 text-sm" style="color:rgba(255,255,255,0.85);">
                 <h4 class="text-sm font-semibold mb-2 tracking-wide uppercase"
                     style="color:#e6dac0;">
@@ -183,7 +190,7 @@
                 <div>
                     <p class="text-[11px] uppercase tracking-wide mb-1"
                        style="color:rgba(255,255,255,0.5);">
-                        {{ __('messages.office_address') ?? __('messages.office_address_text') }}
+                        {{ __('messages.office_address') ?? 'عنوان المكتب' }}
                     </p>
                     <p>{{ __('messages.office_address_text') }}</p>
                 </div>
@@ -191,10 +198,11 @@
                 <div class="pt-2">
                     <p class="text-[11px] uppercase tracking-wide mb-1"
                        style="color:rgba(255,255,255,0.5);">
-                        {{ __('messages.working_hours') ?? 'Working Hours' }}
+                        {{ __('messages.working_hours') ?? 'ساعات العمل' }}
                     </p>
                     <p>
-                        {{ __('messages.working_hours_value') ?? 'Sun – Thu, 9:00 AM – 6:00 PM (KSA time)' }}
+                        {{-- تم تحديث الترجمة لتعكس التوقيت في الأردن --}}
+                        {{ __('messages.working_hours_value') ?? 'الأحد – الخميس، 9:00 صباحًا – 6:00 مساءً (توقيت الأردن)' }}
                     </p>
                 </div>
             </div>
@@ -204,7 +212,7 @@
              style="border-color:rgba(255,255,255,0.1);">
             <p class="text-center text-xs"
                style="color:rgba(255,255,255,0.6);">
-                &copy; {{ date('Y') }} {{ config('app.name', 'Munhana') }} — {{ __('messages.all_rights_reserved') }}
+                &copy; {{ date('Y') }} {{ config('app.name', 'منحنى') }} — {{ __('messages.all_rights_reserved') }}
             </p>
         </div>
     </footer>

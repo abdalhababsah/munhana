@@ -9,17 +9,17 @@
 
     <meta name="robots" content="noindex, nofollow">
 
-    {{-- عنوان الصفحة --}}
-    <title>@yield('title', 'لوحة التحكم') | {{ config('app.name', 'مونانا') }}</title>
+    {{-- عنوان الصفحة (تم تحديث الترجمة لتعكس "منحنى") --}}
+    <title>@yield('title', 'لوحة التحكم') | {{ config('app.name', 'منحنى') }}</title>
 
     {{-- البيانات الوصفية للمشاركة (واتساب، لينكد إن، إلخ.) --}}
-    <meta name="description" content="لوحة التحكم الإدارية لتطبيق تتبع مشاريع البنية التحتية.">
+    <meta name="description" content="لوحة التحكم الإدارية لتطبيق تتبع مشاريع البنية التحتية لمنحنى.">
     
     {{-- Open Graph / فيسبوك / واتساب --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', 'لوحة التحكم') | {{ config('app.name') }}">
-    <meta property="og:description" content="إدارة مشاريع البنية التحتية وتتبعها وتحديثات الإنشاءات.">
+    <meta property="og:description" content="إدارة مشاريع البنية التحتية وتتبعها وتحديثات الإنشاءات لمنحنى.">
     {{-- هذا يضمن ظهور الشعار الصحيح عند المشاركة --}}
     <meta property="og:image" content="{{ asset('dash/assets/images/logo-light.png') }}">
     <meta property="og:image:width" content="1200">
@@ -29,7 +29,7 @@
     {{-- بطاقة تويتر (Twitter Card) --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'لوحة التحكم') | {{ config('app.name') }}">
-    <meta name="twitter:description" content="إدارة مشاريع البنية التحتية وتتبعها وتحديثات الإنشاءات.">
+    <meta name="twitter:description" content="إدارة مشاريع البنية التحتية وتتبعها وتحديثات الإنشاءات لمنحنى.">
     <meta name="twitter:image" content="{{ asset('dash/assets/images/logo-light.png') }}">
 
     <link rel="shortcut icon" href="{{ asset('dash/assets/images/favicon.ico') }}">
