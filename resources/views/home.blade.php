@@ -198,6 +198,7 @@
                                 __('messages.service_arch_point3'),
                             ],
                             'icon'  => 'uil-scenery',
+                            'image' => 'dash/assets/images/HRES-84.webp',
                         ],
                         [
                             'title' => __('messages.service_interior_title'),
@@ -208,6 +209,7 @@
                                 __('messages.service_interior_point3'),
                             ],
                             'icon'  => 'uil-ruler-combined',
+                            'image' => 'dash/assets/images/modern-sofa.jpg',
                         ],
                         [
                             'title' => __('messages.service_fitout_title'),
@@ -218,6 +220,7 @@
                                 __('messages.service_fitout_point3'),
                             ],
                             'icon'  => 'uil-constructor',
+                            'image' => 'dash/assets/images/modern-contemporary-interior-design.jpg',
                         ],
                         [
                             'title' => __('messages.service_turnkey_title'),
@@ -228,17 +231,27 @@
                                 __('messages.service_turnkey_point3'),
                             ],
                             'icon'  => 'uil-key-skeleton',
+                            'image' => 'dash/assets/images/a44f725d1984987604fbad6f904e8e9e.webp',
                         ],
                     ];
                 @endphp
 
                 @foreach($services as $service)
-                    <div class="card border border-slate-100 hover:border-[#d3af38]/60 hover:shadow-xl transition bg-white rounded-2xl">
-                        <div class="p-6">
-                            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-2xl"
-                                 style="background-color:rgba(227,208,165,0.35); color:#2f2f2f;">
-                                <i class="uil {{ $service['icon'] }}"></i>
+                    <div class="card border border-slate-100 hover:border-[#d3af38]/60 hover:shadow-xl transition bg-white rounded-2xl overflow-hidden">
+                        @if($service['image'])
+                            <div class="h-48 overflow-hidden">
+                                <img src="{{ asset($service['image']) }}"
+                                     alt="{{ $service['title'] }}"
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                             </div>
+                        @endif
+                        <div class="p-6">
+                            @if(!$service['image'])
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-2xl"
+                                     style="background-color:rgba(227,208,165,0.35); color:#2f2f2f;">
+                                    <i class="uil {{ $service['icon'] }}"></i>
+                                </div>
+                            @endif
                             <h3 class="text-xl font-semibold mb-3 text-[#2f2f2f]">{{ $service['title'] }}</h3>
                             <p class="text-slate-600 text-sm mb-4">{{ $service['text'] }}</p>
                             <ul class="text-xs text-slate-500 space-y-1">
