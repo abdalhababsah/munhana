@@ -377,7 +377,6 @@ return [
     'cancelled' => 'Cancelled',
 
     // Client Portal
-    'client_portal' => 'Client Portal',
     'my_projects' => 'My Projects',
     'my_profile' => 'My Profile',
     'welcome_back' => 'Welcome Back',
@@ -544,10 +543,6 @@ return [
     'monitor_costs_budget' => 'Monitor project costs and budget vs actual',
 
     // Landing Page
-    'app_name' => 'munhana',
-    'app_tagline' => 'Complete Construction Project Management',
-    'hero_title' => 'Streamline Your Construction Projects',
-    'hero_description' => 'A comprehensive platform to manage construction projects from planning to completion. Track progress, manage resources, and collaborate seamlessly.',
     'get_started' => 'Get Started',
     'learn_more' => 'Learn More',
     'features_title' => 'Powerful Features',
@@ -632,7 +627,6 @@ return [
     'platform_cta_title' => 'Digitize every site interaction',
     'platform_cta_text' => 'Munhana replaces fragmented spreadsheets with actionable intelligence.',
     'book_demo' => 'Book a Demo',
-    'contact_us' => 'Contact Us',
     'get_in_touch' => 'Get in touch',
     'contact_headline' => 'Let’s build your next landmark',
     'contact_intro' => 'Tell us about your project vision, and our team will design a tailored delivery roadmap.',
@@ -706,9 +700,6 @@ return [
     | Services Section
     |--------------------------------------------------------------------------
     */
-
-    'services_title' => 'Design, Build, and Furnish – Under One Roof',
-    'services_subtitle' => 'We combine architecture, interior design, and on-site execution to deliver spaces that feel tailored, not templated.',
 
     'service_arch_title' => 'Architectural Concepts',
     'service_arch_desc' => 'Floor plans, zoning, and circulation that respect structure, sunlight, and your lifestyle – synced with BOQs from day one.',
@@ -809,7 +800,7 @@ return [
     'role_worker_point1' => 'Access from mobile on site',
     'role_worker_point2' => 'Upload progress photos & notes',
     'role_worker_point3' => 'View latest revisions instantly',
-
+'meta_description' => 'Comprehensive infrastructure tracking and project management solutions. We handle architecture, interior design, fit-out, and turnkey projects.',
     /*
     |--------------------------------------------------------------------------
     | CTA Section

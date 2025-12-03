@@ -3,9 +3,37 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', __('messages.app_name'))</title>
-    <meta name="description" content="{{ __('messages.app_tagline') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    {{-- 1. Primary Meta Tags --}}
+    <title>@yield('title', config('app.name', 'Munhana')) | {{ __('messages.app_tagline') }}</title>
+    <meta name="description" content="@yield('meta_description', __('messages.meta_description', ['app_name' => config('app.name')]))">
+    <meta name="keywords" content="infrastructure, construction tracker, project management, turnkey solutions, interior design, fitout, architecture, engineering, building app">
+    <meta name="author" content="{{ config('app.name') }}">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    {{-- 2. Open Graph / Facebook / WhatsApp (The Fix for Sharing) --}}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('title', config('app.name')) - {{ __('messages.app_tagline') }}">
+    <meta property="og:description" content="@yield('meta_description', __('messages.meta_description'))">
+    <meta property="og:image" content="{{ asset('dash/assets/images/logo-light.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="{{ app()->getLocale() === 'ar' ? 'ar_SA' : 'en_US' }}">
+    <meta property="og:site_name" content="{{ config('app.name') }}">
+
+    {{-- 3. Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="@yield('title', config('app.name'))">
+    <meta name="twitter:description" content="@yield('meta_description', __('messages.meta_description'))">
+    <meta name="twitter:image" content="{{ asset('dash/assets/images/logo-light.png') }}">
+
+    {{-- Favicon --}}
     <link rel="shortcut icon" href="{{ asset('dash/assets/images/favicon.ico') }}">
+    
+    {{-- CSS & Scripts --}}
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -24,14 +52,14 @@
             {{-- Column 1: Brand & About --}}
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                    <img src="{{ asset('dash/assets/images/logo-light.png') }}" alt="logo" class="h-10">
+                    <img src="{{ asset('dash/assets/images/logo-light.png') }}" alt="{{ config('app.name') }} logo" class="h-10">
                 </div>
                 <p class="text-sm" style="color:rgba(255,255,255,0.8);">
                     {{ __('messages.footer_about') }}
                 </p>
     
                 <div class="flex items-center gap-3 pt-2">
-                    {{-- Social placeholders – replace href with real links --}}
+                    {{-- Social Links --}}
                     <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center transition"
                        style="background-color:rgba(230,218,192,0.07); color:#e6dac0;"
                        onmouseover="this.style.backgroundColor='#d3af38';this.style.color='#2f2f2f';"
@@ -87,7 +115,6 @@
                             {{ __('messages.login') }}
                         </a>
                     </li>
-                    {{-- Optional extra links --}}
                     <li>
                         <a href="#services"
                            class="transition-colors"
@@ -177,10 +204,9 @@
              style="border-color:rgba(255,255,255,0.1);">
             <p class="text-center text-xs"
                style="color:rgba(255,255,255,0.6);">
-                &copy; {{ date('Y') }} {{ __('messages.app_name') }} — {{ __('messages.all_rights_reserved') }}
+                &copy; {{ date('Y') }} {{ config('app.name', 'Munhana') }} — {{ __('messages.all_rights_reserved') }}
             </p>
         </div>
     </footer>
-    
 </body>
 </html>
