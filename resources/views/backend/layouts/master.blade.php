@@ -66,7 +66,9 @@
         </div>
         @include('backend.partials.profile-menu')
 
-        @include('backend.partials.search-modal')
+        @if(auth()->user()->role === 'admin')
+            @include('backend.partials.search-modal')
+        @endif
         @include('backend.partials.confirmation-modal')
 
     </div>
