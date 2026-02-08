@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>@yield('title', 'Authentication') | TailFox - Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="MyraStudio" name="author">
+    <meta content="Abdelrahman Alhababsah" name="author">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- App favicon -->

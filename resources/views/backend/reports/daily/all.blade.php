@@ -152,9 +152,13 @@
                     @foreach($reports as $report)
                     <tr class="hover:bg-gray-50">
                         <td class="px-6 py-4 whitespace-nowrap">
+                            @if($report->project)
                             <a href="{{ route('backend.projects.show', $report->project) }}" class="text-sm text-primary hover:underline">
                                 {{ app()->getLocale() === 'ar' ? $report->project->name_ar : $report->project->name }}
                             </a>
+                            @else
+                            <span class="text-sm text-gray-500">{{ __('messages.not_available') }}</span>
+                            @endif
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <span class="text-sm font-medium text-gray-900">

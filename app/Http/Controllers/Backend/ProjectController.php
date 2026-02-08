@@ -23,8 +23,8 @@ class ProjectController extends Controller
             $search = $request->search;
             $query->where(function ($q) use ($search) {
                 $q->where('name', 'like', "%{$search}%")
-                  ->orWhere('name_ar', 'like', "%{$search}%")
-                  ->orWhere('contract_number', 'like', "%{$search}%");
+                    ->orWhere('name_ar', 'like', "%{$search}%")
+                    ->orWhere('contract_number', 'like', "%{$search}%");
             });
         }
 
@@ -164,14 +164,14 @@ class ProjectController extends Controller
     {
         // Check if project has related data
         $hasRelatedData = $project->boqItems()->exists() ||
-                          $project->dailyReports()->exists() ||
-                          $project->timelines()->exists() ||
-                          $project->materialDeliveries()->exists();
+            $project->dailyReports()->exists() ||
+            $project->timelines()->exists() ||
+            $project->materialDeliveries()->exists();
 
         if ($hasRelatedData) {
             // Soft delete if has related data
             $project->delete();
-            $message = __('Project archived successfully. Related data preserved.');
+            $message = __('messages.project_archived_safe');
         } else {
             // Can safely delete
             $project->forceDelete();

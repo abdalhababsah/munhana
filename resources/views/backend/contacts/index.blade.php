@@ -37,11 +37,11 @@
             <table class="min-w-full divide-y divide-slate-200">
                 <thead class="bg-slate-50">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase">{{ __('messages.name') }}</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase">{{ __('messages.email') }}</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase">{{ __('messages.subject') }}</th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase">{{ __('messages.status') }}</th>
-                        <th class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase">{{ __('messages.actions') }}</th>
+                        <th class="px-6 py-3 text-start text-xs font-semibold text-slate-500 uppercase">{{ __('messages.name') }}</th>
+                        <th class="px-6 py-3 text-start text-xs font-semibold text-slate-500 uppercase">{{ __('messages.email') }}</th>
+                        <th class="px-6 py-3 text-start text-xs font-semibold text-slate-500 uppercase">{{ __('messages.subject') }}</th>
+                        <th class="px-6 py-3 text-start text-xs font-semibold text-slate-500 uppercase">{{ __('messages.status') }}</th>
+                        <th class="px-6 py-3 text-end text-xs font-semibold text-slate-500 uppercase">{{ __('messages.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
@@ -64,7 +64,7 @@
                                 @endphp
                                 <span class="px-3 py-1 rounded-full text-xs font-semibold {{ $badge }}">{{ __('messages.' . $contact->status) }}</span>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4 text-end">
                                 <a href="{{ route('backend.contacts.show', $contact) }}" class="btn btn-sm btn-light">{{ __('messages.view_details') }}</a>
                             </td>
                         </tr>

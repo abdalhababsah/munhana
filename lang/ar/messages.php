@@ -492,6 +492,12 @@ return [
     'deleted_successfully' => 'تم الحذف بنجاح',
     'no_data' => 'لا توجد بيانات',
     'confirm_delete' => 'هل أنت متأكد من الحذف؟',
+    'project_archived_safe' => 'تم أرشفة المشروع بنجاح. تم حفظ البيانات المرتبطة.',
+
+    'please_check_form_errors' => 'يرجى التحقق من الأخطاء في النموذج.',
+    'fullscreen' => 'ملء الشاشة',
+    'pages' => 'الصفحات',
+    'no_results_found' => 'لم يتم العثور على نتائج',
 
     // Worker Authorization
     'not_assigned_to_project' => 'أنت غير معين في هذا المشروع',
@@ -818,9 +824,9 @@ return [
 
     'working_hours' => 'ساعات العمل',
     'working_hours_value' => 'من الأحد إلى الخميس، من 9:00 صباحاً حتى 6:00 مساءً (بتوقيت عمّان)',
-// Contact / office
-'office_location' => 'موقع المكتب',
+    // Contact / office
+    'office_location' => 'موقع المكتب',
 
-// Contact form
-'subject' => 'الموضوع',
+    // Contact form
+    'subject' => 'الموضوع',
 ];

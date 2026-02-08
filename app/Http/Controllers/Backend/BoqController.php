@@ -16,7 +16,11 @@ class BoqController extends Controller
      */
     public function allItems(): View
     {
-        $boqItems = BoqItem::with('project')->orderBy('created_at', 'desc')->paginate(20);
+        $boqItems = BoqItem::with([
+            'project' => function ($query) {
+                $query->withTrashed();
+            }
+        ])->orderBy('created_at', 'desc')->paginate(20);
 
         // Calculate totals
         $stats = [

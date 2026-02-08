@@ -160,10 +160,10 @@ class App {
     // Topbar Fullscreen Button
     initfullScreenListener() {
         var self = this;
-        var fullScreenBtn = document.querySelector('[data-toggle="fullscreen"]');
+        var fullScreenBtns = document.querySelectorAll('[data-toggle="fullscreen"]');
 
-        if (fullScreenBtn) {
-            fullScreenBtn.addEventListener('click', function (e) {
+        fullScreenBtns.forEach(function(btn) {
+            btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.body.classList.toggle('fullscreen-enable')
                 if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
@@ -184,7 +184,7 @@ class App {
                     }
                 }
             });
-        }
+        });
     }
 
     init() {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" data-sidebar-color="light" data-topbar-color="light" data-sidebar-view="default">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" data-sidebar-color="light"
+    data-topbar-color="light" data-sidebar-view="default">
 
 <head>
     <meta charset="utf-8">
@@ -14,7 +15,7 @@
 
     {{-- البيانات الوصفية للمشاركة (واتساب، لينكد إن، إلخ.) --}}
     <meta name="description" content="لوحة التحكم الإدارية لتطبيق تتبع مشاريع البنية التحتية لمنحنى.">
-    
+
     {{-- Open Graph / فيسبوك / واتساب --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
@@ -66,6 +67,7 @@
         @include('backend.partials.profile-menu')
 
         @include('backend.partials.search-modal')
+        @include('backend.partials.confirmation-modal')
 
     </div>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\GlobalSearchController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
@@ -61,6 +62,10 @@ Route::prefix('backend')->name('backend.')->middleware(['auth', 'verified', 'adm
     Route::get('boq/{boq}/edit', [BoqController::class, 'edit'])->name('boq.edit');
     Route::put('boq/{boq}', [BoqController::class, 'update'])->name('boq.update');
     Route::delete('boq/{boq}', [BoqController::class, 'destroy'])->name('boq.destroy');
+
+    // Global Search
+    Route::get('search', [GlobalSearchController::class, 'search'])->name('global.search');
+
 
     // Timeline Management
     Route::get('timeline/all', [TimelineController::class, 'allActivities'])->name('timeline.all');
@@ -238,4 +243,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

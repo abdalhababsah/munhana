@@ -17,7 +17,12 @@ class DailyReportController extends Controller
      */
     public function allReports(Request $request): View
     {
-        $query = DailyReport::with('project', 'creator');
+        $query = DailyReport::with([
+            'project' => function ($query) {
+                $query->withTrashed();
+            },
+            'creator'
+        ]);
 
         // Filter by date range
         if ($request->filled('date_from')) {
@@ -113,7 +118,13 @@ class DailyReportController extends Controller
      */
     public function show(DailyReport $report): View
     {
-        $report->load('project', 'creator', 'comments.user');
+        $report->load([
+            'project' => function ($query) {
+                $query->withTrashed();
+            },
+            'creator',
+            'comments.user'
+        ]);
 
         return view('backend.reports.daily.show', compact('report'));
     }

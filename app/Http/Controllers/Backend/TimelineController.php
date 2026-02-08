@@ -18,7 +18,12 @@ class TimelineController extends Controller
      */
     public function allActivities(Request $request): View
     {
-        $query = ProjectTimeline::with('project', 'boqItem');
+        $query = ProjectTimeline::with([
+            'project' => function ($query) {
+                $query->withTrashed();
+            },
+            'boqItem'
+        ]);
 
         // Filter by status
         if ($request->filled('status')) {

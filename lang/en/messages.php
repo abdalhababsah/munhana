@@ -491,6 +491,11 @@ return [
     'deleted_successfully' => 'Deleted successfully',
     'no_data' => 'No data available',
     'confirm_delete' => 'Are you sure you want to delete?',
+    'project_archived_safe' => 'Project archived successfully. Related data preserved.',
+    'please_check_form_errors' => 'Please check the form for errors.',
+    'fullscreen' => 'Fullscreen',
+    'pages' => 'Pages',
+    'no_results_found' => 'No results found',
 
     // Worker Authorization
     'not_assigned_to_project' => 'You are not assigned to this project',
@@ -800,7 +805,7 @@ return [
     'role_worker_point1' => 'Access from mobile on site',
     'role_worker_point2' => 'Upload progress photos & notes',
     'role_worker_point3' => 'View latest revisions instantly',
-'meta_description' => 'Comprehensive infrastructure tracking and project management solutions. We handle architecture, interior design, fit-out, and turnkey projects.',
+    'meta_description' => 'Comprehensive infrastructure tracking and project management solutions. We handle architecture, interior design, fit-out, and turnkey projects.',
     /*
     |--------------------------------------------------------------------------
     | CTA Section
@@ -814,10 +819,10 @@ return [
     | Footer
     |--------------------------------------------------------------------------
     */
-// Contact / office
-'office_location' => 'Office location',
+    // Contact / office
+    'office_location' => 'Office location',
 
-// Contact form
-'subject' => 'Subject',
+    // Contact form
+    'subject' => 'Subject',
 
 ];

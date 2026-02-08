@@ -27,7 +27,7 @@ class MaterialDeliveryController extends Controller
             $boqItem = $items->first()->boqItem;
             return [
                 'boq_item' => $boqItem,
-                'total_delivered' => $items->sum('quantity_delivered'),
+                'total_delivered' => $items->sum('quantity'),
                 'deliveries' => $items,
             ];
         });
@@ -37,7 +37,7 @@ class MaterialDeliveryController extends Controller
             'total_deliveries' => $deliveries->count(),
             'total_items' => $groupedDeliveries->count(),
             'total_value_delivered' => $deliveries->sum(function ($delivery) {
-                return $delivery->quantity_delivered * $delivery->boqItem->unit_price;
+                return $delivery->quantity * $delivery->boqItem->unit_price;
             }),
         ];
 
@@ -63,7 +63,7 @@ class MaterialDeliveryController extends Controller
             'project_id' => 'required|exists:projects,id',
             'boq_item_id' => 'required|exists:boq_items,id',
             'delivery_date' => 'required|date',
-            'quantity_delivered' => 'required|numeric|min:0',
+            'quantity' => 'required|numeric|min:0',
             'supplier_name' => 'required|string|max:255',
             'received_by' => 'required|string|max:255',
             'notes' => 'nullable|string',
@@ -75,7 +75,7 @@ class MaterialDeliveryController extends Controller
 
         // Update BOQ item executed_quantity
         $boqItem = BoqItem::find($validated['boq_item_id']);
-        $boqItem->executed_quantity += $validated['quantity_delivered'];
+        $boqItem->executed_quantity += $validated['quantity'];
         $boqItem->save();
 
         return redirect()->route('backend.materials.index', $validated['project_id'])
@@ -98,12 +98,12 @@ class MaterialDeliveryController extends Controller
      */
     public function update(Request $request, MaterialDelivery $material): RedirectResponse
     {
-        $oldQuantity = $material->quantity_delivered;
+        $oldQuantity = $material->quantity;
 
         $validated = $request->validate([
             'boq_item_id' => 'required|exists:boq_items,id',
             'delivery_date' => 'required|date',
-            'quantity_delivered' => 'required|numeric|min:0',
+            'quantity' => 'required|numeric|min:0',
             'supplier_name' => 'required|string|max:255',
             'received_by' => 'required|string|max:255',
             'notes' => 'nullable|string',
@@ -115,7 +115,7 @@ class MaterialDeliveryController extends Controller
 
         // Update BOQ item executed_quantity (adjust the difference)
         $boqItem = BoqItem::find($validated['boq_item_id']);
-        $boqItem->executed_quantity = $boqItem->executed_quantity - $oldQuantity + $validated['quantity_delivered'];
+        $boqItem->executed_quantity = $boqItem->executed_quantity - $oldQuantity + $validated['quantity'];
         $boqItem->save();
 
         return redirect()->route('backend.materials.index', $material->project_id)
@@ -128,7 +128,7 @@ class MaterialDeliveryController extends Controller
     public function destroy(MaterialDelivery $material): RedirectResponse
     {
         $projectId = $material->project_id;
-        $quantity = $material->quantity_delivered;
+        $quantity = $material->quantity;
         $boqItemId = $material->boq_item_id;
 
         // Delete delivery

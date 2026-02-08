@@ -29,8 +29,8 @@ class ClientProjectController extends Controller
             $search = $request->search;
             $query->where(function ($q) use ($search) {
                 $q->where('name', 'like', "%{$search}%")
-                  ->orWhere('name_ar', 'like', "%{$search}%")
-                  ->orWhere('contract_number', 'like', "%{$search}%");
+                    ->orWhere('name_ar', 'like', "%{$search}%")
+                    ->orWhere('contract_number', 'like', "%{$search}%");
             });
         }
 
@@ -84,7 +84,7 @@ class ClientProjectController extends Controller
                 $query->orderBy('claim_date', 'desc');
             },
             'projectCosts' => function ($query) {
-                $query->orderBy('date', 'desc');
+                $query->orderBy('cost_date', 'desc');
             },
         ]);
 
