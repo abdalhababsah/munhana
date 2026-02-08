@@ -6,18 +6,21 @@
     <div class="flex flex-col items-center h-full gap-4 py-10 px-3">
         <!-- Profile Link -->
         <a href="{{ route('profile.edit') }}" type="button" class="flex flex-col items-center gap-1">
-            <img src="{{ asset('dash/assets/images/users/avatar-6.jpg') }}" alt="user-image" class="rounded-full h-8 w-8">
+            <img src="{{ asset('dash/assets/images/users/avatar-6.jpg') }}" alt="user-image"
+                class="rounded-full h-8 w-8">
             <span class="font-medium text-base">{{ $profileUser->name ?? __('messages.user') }}</span>
             <span class="text-sm">{{ $roleLabel }}</span>
         </a>
 
-        <!-- Search Modal Button -->
-        <button type="button" data-hs-overlay="#search-modal" class="bg-white rounded-full shadow-md p-2">
-            <span class="sr-only">Search</span>
-            <span class="flex items-center justify-center h-6 w-6">
-                <i class="uil uil-search text-2xl"></i>
-            </span>
-        </button>
+        @if($profileUser->role === 'admin')
+            <!-- Search Modal Button -->
+            <button type="button" data-hs-overlay="#search-modal" class="bg-white rounded-full shadow-md p-2">
+                <span class="sr-only">Search</span>
+                <span class="flex items-center justify-center h-6 w-6">
+                    <i class="uil uil-search text-2xl"></i>
+                </span>
+            </button>
+        @endif
 
         <!-- Fullscreen Toggle Button -->
         <div class="flex">
